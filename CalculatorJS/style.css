@@ -8,7 +8,7 @@ body {
 #calculator {
     width: 640px;
     height: 450px;
-    background-color: gray;
+    background-color: grey;
     display: flex;
     padding: 20px;
     flex-direction: column;
@@ -89,6 +89,7 @@ body {
     border-width: 1px;
     border-color: darkcyan;
     cursor:pointer;
+    font-size: 3rem;
 }
 
 .operator:hover {
