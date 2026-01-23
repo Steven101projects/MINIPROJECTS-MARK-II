@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+header {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    color: white;
+    background-color: rgb(50, 123, 232);
+    padding: 20px;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.filtering {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    padding: 1%;
+}
+.filteringOption {
+    display: flex;
+      padding: 1%;
+}
+.filteringOption div {
+    display: flex;
+    padding: 2px 40px;
+    border-color: rgb(195, 195, 195);
+    border-style: solid;
+    background-color: antiquewhite;
+    color: black;
+}
+
+.searchBar {
+    
+}
+
+.foodGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 0px 60px;
+}
+
+.food {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 80px;
+    padding: 16px 35px;
+    border-color: rgb(195, 195, 195);
+    border-style: solid;
+    background-color: rgb(21, 21, 21);
+    color: white;
+}
