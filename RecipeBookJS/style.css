@@ -1,6 +1,8 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
 }
 header {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +30,6 @@ h1 {
 .option {
     display: flex;
     flex-direction: column;
-    width: 100%;
     margin-top: 12px;
 }
 
@@ -54,6 +55,12 @@ h1 {
     color: rgb(93, 89, 89);
 }
 
+@media (max-width: 768px) {
+ .filteringOption{
+    flex-direction: column;
+ }
+}
+
 .filteringOption {
     font-style: italic;
     display: flex;
@@ -69,13 +76,6 @@ h1 {
     width: 400px;
 }
 
-ul,
-ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
 .selectionBox {
     text-align: center;
     list-style: none;
@@ -88,6 +88,12 @@ ol {
 
 #levelOptions {
     display: none;
+}
+
+#levelOptions ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #typeOptions {
@@ -119,26 +125,143 @@ ol {
 }
 
 .foodGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    gap: 10px;
+    display: flex;
+    width: 100%;
+    height: auto;
     padding: 0px 60px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .food {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     width: 100%;
     font-size: 1.5rem;
-    border-radius: 80px;
+    border-radius: 28px;
     padding: 16px 35px;
-    border-color: rgb(195, 195, 195);
     border-style: solid;
     background-color: rgb(21, 21, 21);
-    color: white;
+    color: rgb(255, 255, 255);
     transition: transform 0.2s ease;
+    flex: 0 0 calc(33.333% - 10px);
+}
+
+@media (max-width: 768px) {
+  .food {
+    flex: 0 0 100%;
+  }
+
+  .foodGrid {
+    padding: 0 16px;
+  }
+
 }
 
 .food:hover {
     transform: scale(1.1);
+}
+
+#modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(40, 36, 23, 0.111);
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+}
+
+.recipePage {
+    background-color: white;
+    width: 90%;
+    height: auto;
+    opacity: 100%;
+    border-radius: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(39, 32, 25);
+    font-size: 1.2rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.recipeHeader {
+    display: flex;
+    padding: 20px;
+
+}
+
+@media (max-width: 768px) {
+ .recipeHeader {
+    flex-direction: column;
+ }
+ .hLeft {
+    width: 100%;
+    padding-right: 0px;
+ }
+
+ .hRight {
+    width: 100%;
+ }
+}
+
+.goBackButton {
+    display: flex;
+    width: 90%;
+    padding: 10px 30px 0px 0px;
+    justify-content: flex-end;
+    position: absolute;
+
+}
+
+.goBackButton p{
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.goBackButton p:hover {
+    transform: rotate(180deg);
+}
+
+.hLeft {
+    width: 70%;
+    padding-right: 20px;
+}
+
+.subtitleContent {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.hRight {
+}
+
+.recipeHeader h2 {
+    font-size: 2.4rem;
+}
+
+hr {
+    margin: 10px;
+    border-color: rgb(231, 145, 53);
+    border-style: solid;
+}
+
+.ingredients{
+    padding: 15px;
+    font-style: italic;
+}
+
+.steps {
+    padding: 20px;
+}
+
+.stepBox {
+    margin: 0;
+    padding: 0;
+}
+
+.disclaimer {
+    padding: 20px;
+    text-align: center;
 }

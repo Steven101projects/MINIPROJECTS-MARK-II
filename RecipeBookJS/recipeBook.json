@@ -1,0 +1,133 @@
+{
+  "recipes": [
+    {
+      "id": "0000",
+      "themeHexColor": "",
+      "title": "Test Food",
+      "subtitle": "",
+
+      "meal": "",
+      "level": "",
+      "type": "",
+
+      "ingredients": "",
+
+      "steps": [],
+
+      "disclaimer": ""
+    },
+    {
+  "id": "0001",
+  "themeHexColor": "#f5c542",
+  "title": "Egg Fried Rice 🍳",
+  "subtitle": "A foundational fried rice dish that demonstrates basic stir frying techniques and ingredient balance.",
+
+  "meal": "Breakfast",
+  "level": "Easy / Simple",
+  "type": "Fried",
+
+  "ingredients": "Cooked rice, fresh eggs, minced garlic, chopped green onions, soy sauce, neutral cooking oil.",
+
+  "steps": [
+    "Heat a small amount of cooking oil in a pan over medium heat.",
+    "Crack the eggs directly into the pan and gently scramble until fully set.",
+    "Remove the cooked eggs from the pan and set them aside to prevent overcooking.",
+    "Add more oil if necessary, then saute the minced garlic until aromatic.",
+    "Add the cooked rice and break up any clumps while stirring continuously.",
+    "Return the scrambled eggs to the pan and combine evenly with the rice.",
+    "Season with soy sauce and continue stir frying until the rice is evenly coated and heated through.",
+    "Finish by adding green onions, then remove from heat and serve immediately."
+  ],
+
+  "disclaimer": "This dish contains eggs and soy, which are common allergens. Use chilled or day old rice to reduce excess moisture and ensure the rice is reheated thoroughly to prevent foodborne illness."
+},
+{
+  "id": "0002",
+  "themeHexColor": "#7a4a2e",
+  "title": "Chicken Adobo 🍗",
+  "subtitle": "A traditional Filipino dish that highlights slow simmering and balanced savory acidity.",
+
+  "meal": "Dinner",
+  "level": "Medium / Quick",
+  "type": "Proteins",
+
+  "ingredients": "Chicken pieces, soy sauce, vinegar, crushed garlic, bay leaves, whole peppercorns.",
+
+  "steps": [
+    "Marinate the chicken in soy sauce and crushed garlic for at least thirty minutes to build flavor.",
+    "Transfer the chicken and marinade into a pot and bring to a gentle boil over medium heat.",
+    "Add vinegar, bay leaves, and peppercorns without stirring to maintain proper sauce balance.",
+    "Lower the heat and allow the chicken to simmer until tender and fully cooked.",
+    "Reduce the sauce slightly to concentrate flavor, then serve hot with steamed rice."
+  ],
+
+  "disclaimer": "This dish contains soy and may trigger allergies related to soy based products. Ensure the chicken is fully cooked to a safe internal temperature before consumption to avoid foodborne risks."
+},
+{
+  "id": "0003",
+  "themeHexColor": "#4caf50",
+  "title": "Sinigang 🍲",
+  "subtitle": "A sour based soup that emphasizes broth development and vegetable timing.",
+
+  "meal": "Lunch",
+  "level": "Hard / Complex",
+  "type": "Proteins",
+
+  "ingredients": "Pork or shrimp, tamarind, tomatoes, onions, radish, leafy vegetables.",
+
+  "steps": [
+    "Boil the protein in water until partially tender, skimming impurities from the surface.",
+    "Add tomatoes and onions and allow them to soften to build the broth base.",
+    "Stir in tamarind to introduce the signature sour flavor.",
+    "Add vegetables in stages based on cooking time.",
+    "Simmer briefly, season to taste, and serve while hot."
+  ],
+
+  "disclaimer": "This dish may contain shellfish when prepared with shrimp and may include other allergens depending on vegetable selection. Proper handling and thorough cooking of protein ingredients are necessary to ensure food safety."
+},
+{
+  "id": "0004",
+  "themeHexColor": "#8d6e63",
+  "title": "Beef Steak 🥩",
+  "subtitle": "A marinated beef dish that demonstrates quick pan cooking and acidity control.",
+
+  "meal": "Dinner",
+  "level": "Medium / Quick",
+  "type": "Proteins",
+
+  "ingredients": "Thinly sliced beef, soy sauce, calamansi or lemon juice, onions, cooking oil.",
+
+  "steps": [
+    "Marinate the beef in soy sauce and citrus juice to enhance tenderness and flavor.",
+    "Heat oil in a pan over medium high heat.",
+    "Cook the beef briefly until lightly browned, then remove from the pan.",
+    "Saute the onions until softened and aromatic.",
+    "Return the beef to the pan, combine evenly, and serve immediately."
+  ],
+
+  "disclaimer": "This dish contains soy and citrus, which may cause allergic reactions in sensitive individuals. Beef should be cooked to an appropriate level to minimize the risk of bacterial contamination."
+},
+{
+  "id": "0005",
+  "themeHexColor": "#ffb74d",
+  "title": "Saute'd Spam 🥓",
+  "subtitle": "A simple pan cooked protein often prepared as a quick breakfast dish.",
+
+  "meal": "Breakfast",
+  "level": "Easy / Simple",
+  "type": "Fried",
+
+  "ingredients": "Spam, sliced garlic, onions, cooking oil.",
+
+  "steps": [
+    "Slice the spam into even portions for consistent cooking.",
+    "Heat a small amount of oil in a pan over medium heat.",
+    "Fry the spam until lightly crisp on both sides.",
+    "Add garlic and onions and saute briefly until fragrant.",
+    "Remove from heat and serve immediately."
+  ],
+
+  "disclaimer": "This dish is high in sodium and should be consumed in moderation."
+}
+  ]
+}

@@ -9,8 +9,8 @@
 <body>
     <header>
         <div class="headerClass">
-            <h1>Nico's Essentials: RECIPE BOOK</h1>
-            <p>Nico's curated recipe book</p>
+            <h1>Nico's Essentials: COOK BOOK</h1>
+            <p>RecipeBook JS</p>
         </div>
         <div class="option">
     <div class="filteringOption">
@@ -57,13 +57,44 @@
             <input class="searchBar" type="text" placeholder="Search here..."></input>
         </div>
             <div class="foodGrid">
-            <div class="food">Egg Fried Rice</div>
-             <div class="food">Egg Fried Rice</div>
-              <div class="food">Egg Fried Rice</div>
+            <!-- <div class="food"><span>Egg Fried Rice</span></div> -->
             </div>
             
             <div>when clicked: It will show a modal of other details on how to cook it</div>
     </main>
+    
+    <div id="modal">
+    <div class="recipePage">
+        <div class="goBackButton"><p>❌</p></div>
+        <div class="recipeHeader">
+        <div class="hLeft">
+        <h2 class="titleContent">FOOD TITLE</h2>
+        <p class="subtitleContent">Sub Title - Description</p>
+        </div>
+
+        <div class="hRight">
+            <p><span style="font-weight:bold">Meal: </span><span class="mealContent"></span></p>
+            <p><span style="font-weight:bold">Level: </span><span class="levelContent"></span></p>
+            <p><span style="font-weight:bold">Type: </span><span class="typeContent"></span></p>
+        </div>
+        </div>
+    <hr>
+        <div class="ingredients">
+            <span style="font-weight:bold">Ingredients: </span><span class="ingredientsContent">Pop</span> 
+        </div>
+    <hr>
+        <div class="steps">
+            <span style="font-weight:bold">Steps:</span>
+            <div class="stepBox">
+                <ol class="stepsContent">
+                </ol>
+            </div>
+        </div>
+ <hr>
+        <div class="disclaimer"> <span style="font-weight:bold; color:red">Disclaimer: </span><span class="disclaimerContent">Pop</span> 
+        </div>
+    </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
