@@ -4,6 +4,19 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  /* For Internet Explorer and Edge */
+  -ms-overflow-style: none;
+  /* For Firefox */
+  scrollbar-width: none;
+}
+
+
 header {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -40,6 +53,7 @@ h1 {
     border-style: solid;
     background-color: antiquewhite;
     color: black; 
+        cursor: pointer;
 }
 
 .options:hover {
@@ -69,15 +83,13 @@ h1 {
 
 .selectionOption {
     background-color: blue;
-    margin-left: auto;
     position: absolute;
     right: 21px;
-    margin-top: 28px;
-    width: 400px;
+    width: 300px;
+    text-align: center;
 }
 
 .selectionBox {
-    text-align: center;
     list-style: none;
     padding: 12px;
     border-color: rgb(195, 195, 195);
@@ -86,15 +98,28 @@ h1 {
     color: black;
 }
 
+@media (max-width: 768px) {
+ .selectionOption {
+    right: 170px;
+}
+}
+
 #levelOptions {
     display: none;
 }
 
-#levelOptions ul li {
-    list-style: none;
+.selectionBox li {
     margin: 0;
     padding: 0;
 }
+
+.selectionBox li:hover {
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(16, 190, 66);
+}
+
+
 
 #typeOptions {
     display: none;
@@ -159,26 +184,33 @@ h1 {
 }
 
 .food:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+            cursor: pointer;
+}
+
+.openModal {
+    position: fixed;
 }
 
 #modal {
     display: none;
+    position: absolute;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     background-color: rgba(40, 36, 23, 0.111);
     width: 100%;
-    height: auto;
-    position: absolute;
+    height: 100vh;
     top: 0;
-    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow-y: auto;
 }
 
 .recipePage {
     background-color: white;
+    position: absolute;
     width: 90%;
     height: auto;
-    opacity: 100%;
     border-radius: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(39, 32, 25);
@@ -208,8 +240,8 @@ h1 {
 
 .goBackButton {
     display: flex;
-    width: 90%;
-    padding: 10px 30px 0px 0px;
+    width: 98%;
+    padding: 10px 0px 0px 0px;
     justify-content: flex-end;
     position: absolute;
 

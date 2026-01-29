@@ -4,6 +4,8 @@ const mealsOpt = document.getElementById("meals");
 
 const selectionBoxes = document.querySelectorAll(".selectionBox");
 
+console.log("Hi! This is RecipeBook JS by Nico Castro.");
+
 levelOpt.addEventListener("click", () => {
    document.getElementById("levelOptions").style.display = "block";
    document.getElementById("typeOptions").style.display = "none";
@@ -24,7 +26,6 @@ mealsOpt.addEventListener("click", () => {
 
 selectionBoxes.forEach(box => {
 box.addEventListener("mouseleave", function(){
-    console.log("round");
    document.getElementById("mealOptions").style.display = "none";
    document.getElementById("levelOptions").style.display = "none";
    document.getElementById("typeOptions").style.display = "none";
@@ -68,7 +69,7 @@ fetch("recipeBook.json")
     }
 
     console.log(loadedRecipes);
-    ViewRecipes();
+    ViewRecipes(loadedRecipes);
   })
   .catch(error => {
     console.error(error);
@@ -80,11 +81,13 @@ let modalPage = document.querySelector("#modal");
 
 goBackBut.querySelector("p").addEventListener("click", () => {
    modalPage.style.display = "none";
+   document.body.classList.remove("openModal");
 })
 
 
-function ViewRecipes(){
-   for(const r of loadedRecipes){
+function ViewRecipes(recipes){
+  document.querySelector(".foodGrid").innerHTML = "";
+   for(const r of recipes){
       var foodTray = document.createElement("div");
       foodTray.classList.add("food");
       var title = document.createElement("span");
@@ -98,6 +101,7 @@ function ViewRecipes(){
       foodTray.addEventListener("click", () => {
 
          modalPage.style.display = "flex";
+         document.body.classList.add("openModal");
 
          document.querySelector(".titleContent").textContent = r.title;
          document.querySelector(".subtitleContent").textContent = r.subtitle;
@@ -117,3 +121,64 @@ function ViewRecipes(){
 
    }
 }
+
+
+const levelOptions = document.getElementById("levelOptions").querySelectorAll("li");
+const typeOptions = document.getElementById("typeOptions").querySelectorAll("li");
+const mealOptions = document.getElementById("mealOptions").querySelectorAll("li");
+
+
+function Sorting(){
+
+  for(const l of levelOptions){
+
+    var sortedRecipes = [];
+
+    l.addEventListener("click", () => {
+      if(l.innerHTML === "Show All"){
+        console.log(l.innerHTML)
+        ViewRecipes(loadedRecipes);
+        return;
+      }
+      sortedRecipes = loadedRecipes.filter(recipe => recipe.level === l.innerHTML);
+      ViewRecipes(sortedRecipes);
+    })
+  }
+
+  for(const t of typeOptions){
+          if(l.innerHTML === "Show All"){
+        console.log(l.innerHTML)
+        ViewRecipes(loadedRecipes);
+        return;
+      }
+    t.addEventListener("click", () => {
+      sortedRecipes = loadedRecipes.filter(recipe => recipe.type === t.innerHTML);
+      ViewRecipes(sortedRecipes);
+    })
+  }
+  for(const m of mealOptions){
+          if(l.innerHTML === "Show All"){
+        console.log(l.innerHTML)
+        ViewRecipes(loadedRecipes);
+        return;
+      }
+    m.addEventListener("click", () => {
+      sortedRecipes = loadedRecipes.filter(recipe => recipe.meal === m.innerHTML);
+      ViewRecipes(sortedRecipes);
+    })
+  }
+};
+
+Sorting();
+
+let searchBar = document.querySelector(".searchBar");
+
+searchBar.addEventListener("input", () => {
+
+  
+  const searchInput = searchBar.value.trim().toLowerCase();
+
+  const result = loadedRecipes.filter(recipe => recipe.title.toLowerCase().includes(searchInput));
+
+  ViewRecipes(result);
+});
