@@ -12,27 +12,33 @@
 </head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
-    <header class="mt-5">
-    <h1>PATTERN GAME JS</h1>
-    <p>MINI PROJECTS: By 101.Projects</p>
+    <header class="mt-5 text-center">
+    <h1>REMEMBER THE PASSCODE!</h1>
+    <p>PATTERN GAME JS (MINI PROJ 3): 101.Projects</p>
     </header>
-    <main>
+    <main class="text-center">
+    <div class="statbar">
+        <p>Level: <span class="level">1</span></p>
+        <p class="status"></p>
+    </div>
   <div class="container cont rounded p-5 w-75">
   <div class="row mb-4">
-    <div class="col"><div class="box"></div></div>
-        <div class="col"><div class="box"></div></div>
-            <div class="col"><div class="box"></div></div>
-                <div class="col"><div class="box"></div></div>
+    <div class="col"><div class="box" id="1"></div></div>
+        <div class="col"><div class="box" id="2"></div></div>
+            <div class="col"><div class="box" id="3"></div></div>
+                <div class="col"><div class="box" id="4"></div></div>
   </div>
     <div class="row">
-    <div class="col"><div class="box"></div></div>
-        <div class="col"><div class="box"></div></div>
-            <div class="col"><div class="box"></div></div>
-                <div class="col"><div class="box"></div></div>
+    <div class="col"><div class="box" id="5"></div></div>
+        <div class="col"><div class="box" id="6"></div></div>
+            <div class="col"><div class="box" id="7"></div></div>
+                <div class="col"><div class="box" id="8"></div></div>
     </div>
     </div>
+    <p class="atts">Attempts: <span class="attempts">0</span></p>
+    <p class="tryAgainmsg">Press Start to Create a New One and Start Again!</p>
+                <button class="startButt">Start</button>
 </main>
- 
     <footer>
 
     </footer>

@@ -70,9 +70,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .box {
-    background-color: blue;
+  background-color: rgb(52, 103, 212);
     width: 100px;
     height: 100%;
+    cursor: pointer;
 }
 
 .cont {
@@ -81,6 +82,15 @@ h1, h2, h3, h4, h5, h6 {
 
 main {
     width: 900px;
+}
+
+.startButt {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  border-color: rgb(166, 166, 244);
+  margin: 20px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
@@ -92,7 +102,7 @@ main {
 }
 
 .box {
-    background-color: blue;
+    background: blue;
     width: 50px;
     height: 100%;
 }
@@ -103,5 +113,27 @@ main {
 main {
     width: 500px;
 }
+}
+
+.signal {
+      /* background-color: rgb(15, 209, 105); */
+      background: linear-gradient(160deg, rgb(21, 232, 255), rgb(92, 92, 133));
+      border: 2px solid rgb(8, 101, 177);
+}
+
+.good {
+        border: 4px solid rgb(41, 219, 44);
+}
+
+.statbar {
+  display:none;
+}
+
+.atts {
+  display:none;
+}
+
+.tryAgainmsg {
+  display:none;
 }
 
