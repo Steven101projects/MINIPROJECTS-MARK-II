@@ -8,6 +8,7 @@ var randomPasscode = [];
 
 const attemptsBox = document.querySelector(".atts");
 const stats = document.querySelector(".statbar");
+const lev = document.querySelector(".lev");
 
 var onGame = false;
 
@@ -16,13 +17,14 @@ var onGame = false;
 startButton.addEventListener("click", function(){
 
 if(!onGame){
-        console.log("clicked!");
+    console.log("clicked!");
         
     PatternSystem();
     onGame = true;
 
     attemptsBox.style.display = "block";
     stats.style.display = "block";
+    lev.style.display = "block";
 } else {
     document.querySelector(".status").textContent = `Already in game!`;
 }
@@ -31,13 +33,24 @@ if(!onGame){
 
 
 function PatternSystem(){
+
     document.querySelector(".level").textContent = `${level}`;
     document.querySelector(".attempts").textContent = `${attempts}`;
+    buttonKeys.forEach(key => {
+    key.classList.add("beep");
+    document.querySelector(".cont").classList.add("beep");
+
+    setTimeout(() => {key.classList.remove("beep")
+        document.querySelector(".cont").classList.remove("beep");      
+    }, 1000);
+    })
+    document.querySelector(".status").textContent = "";
+    document.querySelector(".status").textContent = `Please Watch the Following Passcode...!`;
 
 
     switch(level){
     case 1:
-        ShowCode(1, 1000)
+        ShowCode(1, 2000)
     break;
     case 2:
         ShowCode(3, 1000)
@@ -72,7 +85,8 @@ function PatternSystem(){
 
 function ShowCode(difficulty, speed){
 
-        randomPasscode = []
+    randomPasscode.length = 0;
+    // console.log(randomPasscode);
 
         const bitbybit = setInterval(() => {
         let randomVal = Math.floor(Math.random() * 8) + 1;
@@ -82,7 +96,12 @@ function ShowCode(difficulty, speed){
 
         if(randomPasscode.length === difficulty){
             clearInterval(bitbybit);
-            GameMode()
+            setTimeout(() => {
+                document.querySelector(".cont").classList.add("beep");
+                document.querySelector(".status").textContent = `Please Enter the Passcode`;
+                            GameMode()
+                  }, speed);
+            console.log(randomPasscode)
         }
         }, 1500)
         // console.log(randomPasscode)
@@ -106,14 +125,14 @@ function GameMode(){
 
 buttonKeys.forEach(key => {
 
-key.addEventListener("click", function(){
+key.onclick = function() {
     // console.log(key.id)
     key.classList.add("signal");
     setTimeout(() => {key.classList.remove("signal")
     }, 500);
 
-    // console.log("key.id", key.id)
-    // console.log("randomPasscode[index]", randomPasscode[index])
+    console.log("key.id", key.id)
+    console.log("randomPasscode[index]", randomPasscode[index])
 
     if(Number(key.id) === randomPasscode[index]){
     key.classList.add("good");
@@ -123,12 +142,19 @@ key.addEventListener("click", function(){
     } else {
         console.log("Try Again!")
         document.querySelector(".status").textContent = "Try Again!";
+
         index = 0;
         attempts--;
         console.log(`${attempts} Attempts Left!`)
         document.querySelector(".attempts").textContent = `${attempts}`;
         buttonKeys.forEach(key => {
            key.classList.remove("good");
+           key.classList.add("bad");
+           document.querySelector(".cont").classList.add("bad");
+
+        setTimeout(() => {key.classList.remove("bad")  
+            document.querySelector(".cont").classList.remove("bad"); 
+    }, 500);
         })
         if(attempts <= 0){
             console.log("You lost the Passcode!")
@@ -137,6 +163,11 @@ key.addEventListener("click", function(){
             attempts = 3;
             document.querySelector(".tryAgainmsg").style.display = "block";
             onGame = false;
+            document.querySelector(".cont").classList.add("bad");
+
+        buttonKeys.forEach(key => {
+                    key.onclick = null;
+        })
         }
     }
 
@@ -144,13 +175,14 @@ key.addEventListener("click", function(){
         console.log("Wins!");
         document.querySelector(".status").textContent = "You Win!";
         level++;
+        index = 0;
         attempts = 3;
         document.querySelector(".attempts").textContent = `${attempts}`;
         console.log("Next Level");
         NextRound();
     }
 
-})
+}
 })
 }
 
@@ -163,11 +195,14 @@ function NextRound(){
             time--;
             if(time < 0){
                 clearInterval(clock);
-                PatternSystem();
+  
                 document.querySelector(".status").textContent = ``;
                 buttonKeys.forEach(key => {
                 key.classList.remove("good");
+                key.onclick = null;
                 });
+                              PatternSystem();
+                console.log(randomPasscode);
             };
         }, 1000);
 }
