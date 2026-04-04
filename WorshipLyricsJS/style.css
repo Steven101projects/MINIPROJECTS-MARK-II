@@ -115,10 +115,14 @@ img {
     transition: transform 0.2s ease;
 }
 
-img:hover {
+main img:hover {
     transform: scale(1.03);
     border: 3px solid rgb(27, 218, 244);
     border-radius: 9px;
+}
+
+footer img:hover {
+    transform: scale(1.3);
 }
 
 .sorry {
@@ -126,4 +130,152 @@ img:hover {
   font-size: x-large;
   padding: 50px;
   font-style:italic;
+}
+
+#modal {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(238, 252, 255, 0.3); /* lower opacity for better blur */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px); /* Safari support */
+  justify-content: center;
+  align-items: center;
+}
+
+#modalDiv {
+  border: 2px solid rgb(169, 169, 169);
+  border-radius: 50px;
+  background-color: white;
+  width: 60%;
+  min-height: 50%;
+  display: flex;
+
+}
+
+.modalHalf {
+ height: 100%;
+ width: 50%;
+}
+
+#modalHeader {
+  margin: 20px;
+
+  p {
+    font-size: 2rem;
+    margin: 0px;
+  }
+
+}
+#modalHeader hr {
+  margin: 0;
+  border: none;           /* remove default border */
+  height: 2px;            /* thickness */
+  background-color: black; /* color */
+}
+
+#modalLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+#modalOption {
+    padding: 40px 20px 0px 20px;
+}
+
+.modalLeft-Div {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border: 2px solid rgb(36, 74, 93);
+  height: 40%;
+  padding: 30px;
+  margin: 4px;
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+#modalDownloadDiv {
+  display: flex;
+
+}
+
+#modalRight {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#modalDescription {
+   background-color: rgb(251, 251, 255);
+   width: 100%;
+   height: 20rem;
+   border: 1px solid rgb(91, 91, 91);
+   margin-bottom: 20px;
+   padding: 6px;
+   font-weight: bold;
+   font-size: 1.2rem;
+}
+
+.modalButton {
+  font-size: large;
+  padding: 10px 25px 10px 25px;
+  background-color: white;
+}
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#modalLyrics {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(238, 252, 255, 0.3); /* lower opacity for better blur */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px); /* Safari support */
+  justify-content: center;
+  align-items: center;
+}
+
+#modalLyricsDiv {
+  border: 2px solid rgb(169, 169, 169);
+  border-radius: 50px;
+  background-color: white;
+  width: 60%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px 60px 0px 60px;
+  font-size: 2rem;
+}
+
+#songlyric {
+  overflow-y: auto;
+}
+
+.modalLyricsHeader {
+  display: flex;
+  font-size: x-large;
+  padding-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+}
+
+#modalLyricsTitle {
+  font-weight: bold;
 }

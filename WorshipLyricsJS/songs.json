@@ -3,12 +3,14 @@
     "title": "I Won't Go Back",
     "description": "Live Worship Version",
     "image": "/lyricsimg/iwgb_img.svg",
-    "presentationLink": "https://coldnight.com"
+    "presentationLink": "https://coldnight.com",
+    "songLyric": "<div id='songlyric'><section class='verse'><p class='label'>Verse 1</p><p>I've been changed, healed, freed, delivered.<br>I found joy, peace, grace and favor.<br>(2x)</p></section><section class='pre-chorus'><p class='label'>Pre-Chorus</p><p>Right now is the moment, today is the day,<br>I've been changed, I've been changed.<br>I have waited for this moment to come,<br>And I won't let it pass me by.</p></section><section class='chorus'><p class='label'>Chorus</p><p>I won't go back,<br>I can't go back to the way it used to be<br>For your presence came and changed me.</p></section></div>"
   },
   {
     "title": "Another Song",
     "description": "Studio Version",
     "image": "/lyricsimg/song2.svg",
-    "presentationLink": "https://example.com"
+    "presentationLink": "https://example.com",
+    "songLyric": ""
   }
 ]
